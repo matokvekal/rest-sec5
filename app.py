@@ -1,4 +1,4 @@
-from flask import Flask,jsonify
+from flask import Flask
 from flask_restful import  Api
 from flask_jwt import JWT
 import datetime
@@ -11,10 +11,8 @@ app.config['PROPAGATE_EXCEPTIONS'] = True # To allow flask propagating exception
 app.secret_key = 'jefefewg4erererer3'
 app.config['JWT_AUTH_URL_RUL']='/login'
 app.config['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=60*60/2)#30 min
-# app.config['JWT_AUTH_USERNAME_KEY']='email'
+# app.config['JWT_AUTH_USERNAME_KEY']='email' #123
 api = Api(app)
-
-
 
 
 jwt = JWT(app, authenticate, identity_function)#/login
